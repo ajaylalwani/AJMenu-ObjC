@@ -51,6 +51,12 @@
     [self.btnMainMenu setBackgroundImage:[self.datasource imageForMenuButton] forState:UIControlStateNormal];
     [self.btnMainMenu addTarget:self action:@selector(mainMenuButtonDragged:forEvent:) forControlEvents:UIControlEventTouchDragInside];
 
+    self.btnMainMenu.layer.masksToBounds = false;
+    self.btnMainMenu.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.btnMainMenu.layer.shadowOffset = CGSizeMake(0.0, 5.0);
+    self.btnMainMenu.layer.shadowOpacity = 1.0;
+    self.btnMainMenu.layer.shadowRadius = 3.0;
+    
     [self addSubview:self.overlayView];
     [self addSubview:self.btnMainMenu];
     
